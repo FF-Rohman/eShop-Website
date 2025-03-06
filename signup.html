@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sign Up - E-Commerce</title>
+    <style>
+      /* Reuse previous styles */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Arial", sans-serif;
+      }
+
+      :root {
+        --primary: #2c3e50;
+        --accent: #e74c3c;
+        --hover: #3498db;
+      }
+
+      /* Navigation - Same as previous pages */
+      .navbar {
+        background: var(--primary);
+        padding: 1rem 2rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+      }
+
+      .logo {
+        color: white;
+        font-size: 1.8rem;
+        font-weight: bold;
+        text-decoration: none;
+      }
+
+      .nav-links {
+        display: flex;
+        gap: 2rem;
+        align-items: center;
+      }
+
+      .nav-links a {
+        color: white;
+        text-decoration: none;
+        padding: 0.5rem 1rem;
+        transition: 0.3s;
+      }
+
+      .nav-links a:hover {
+        color: var(--hover);
+      }
+
+      .cart-count {
+        background: var(--accent);
+        padding: 2px 8px;
+        border-radius: 20px;
+        margin-left: 5px;
+      }
+
+      /* Signup Page Specific Styles */
+      .signup-container {
+        max-width: 1200px;
+        margin: 4rem auto;
+        padding: 0 2rem;
+        display: flex;
+        justify-content: center;
+      }
+
+      .signup-card {
+        background: white;
+        padding: 3rem;
+        border-radius: 10px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        width: 100%;
+        max-width: 500px;
+      }
+
+      .signup-header {
+        text-align: center;
+        margin-bottom: 2rem;
+      }
+
+      .signup-header h1 {
+        color: var(--primary);
+        margin-bottom: 0.5rem;
+      }
+
+      .form-group {
+        margin-bottom: 1.5rem;
+      }
+
+      .form-group label {
+        display: block;
+        margin-bottom: 0.5rem;
+        color: var(--primary);
+        font-weight: bold;
+      }
+
+      .form-group input {
+        width: 100%;
+        padding: 0.8rem;
+        border: 2px solid #ddd;
+        border-radius: 5px;
+        font-size: 1rem;
+      }
+
+      .password-match {
+        color: var(--accent);
+        font-size: 0.9rem;
+        margin-top: 0.5rem;
+        display: none;
+      }
+
+      .terms {
+        margin: 1rem 0;
+        display: flex;
+        gap: 0.5rem;
+      }
+
+      .signup-btn {
+        width: 100%;
+        background: var(--primary);
+        color: white;
+        padding: 1rem;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 1.1rem;
+        transition: 0.3s;
+      }
+
+      .signup-btn:hover {
+        background: var(--hover);
+      }
+
+      .social-signup {
+        margin-top: 2rem;
+        text-align: center;
+      }
+
+      .social-btns {
+        display: flex;
+        gap: 1rem;
+        justify-content: center;
+        margin-top: 1rem;
+      }
+
+      .social-btn {
+        padding: 0.8rem 1.5rem;
+        border: 2px solid #ddd;
+        border-radius: 5px;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        transition: 0.3s;
+      }
+
+      .social-btn:hover {
+        background: #f8f9fa;
+      }
+
+      .login-link {
+        text-align: center;
+        margin-top: 1.5rem;
+      }
+
+      .login-link a {
+        color: var(--accent);
+        text-decoration: none;
+      }
+
+      /* Footer - Same as previous pages */
+      footer {
+        background: var(--primary);
+        color: white;
+        padding: 3rem 2rem;
+        margin-top: 4rem;
+      }
+
+      .footer-content {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 2rem;
+      }
+
+      .footer-section h3 {
+        margin-bottom: 1rem;
+        color: var(--hover);
+      }
+
+      .footer-links a {
+        color: white;
+        text-decoration: none;
+        display: block;
+        margin: 0.5rem 0;
+      }
+
+      /* Responsive Design */
+      @media (max-width: 768px) {
+        .nav-links {
+          display: none;
+        }
+
+        .signup-card {
+          padding: 2rem;
+        }
+
+        .terms {
+          flex-direction: column;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Navigation -->
+    <nav class="navbar">
+      <a href="index.html" class="logo">ShopDemo</a>
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="products.html">Products</a>
+        <a href="contact.html">Contact</a>
+        <a href="cart.html">🛒 Cart <span class="cart-count">2</span></a>
+      </div>
+    </nav>
+
+    <div class="signup-container">
+      <div class="signup-card">
+        <div class="signup-header">
+          <h1>Create Account</h1>
+          <p>Join our community today</p>
+        </div>
+
+        <form id="signupForm">
+          <div class="form-group">
+            <label for="name">Full Name</label>
+            <input type="text" id="name" required />
+          </div>
+
+          <div class="form-group">
+            <label for="email">Email Address</label>
+            <input type="email" id="email" required />
+          </div>
+
+          <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" id="password" required />
+          </div>
+
+          <div class="form-group">
+            <label for="confirm-password">Confirm Password</label>
+            <input type="password" id="confirm-password" required />
+            <div class="password-match">Passwords do not match</div>
+          </div>
+
+          <div class="terms">
+            <input type="checkbox" id="terms" required />
+            <label for="terms"
+              >I agree to the
+              <a href="terms.html" style="color: var(--accent)"
+                >Terms of Service</a
+              ></label
+            >
+          </div>
+
+          <button type="submit" class="signup-btn">Create Account</button>
+        </form>
+
+        <div class="social-signup">
+          <p>Or sign up with</p>
+          <div class="social-btns">
+            <button class="social-btn">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                fill="currentColor"
+                class="bi bi-google"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  d="M15.545 6.558a9.4 9.4 0 0 1 .139 1.626c0 2.434-.87 4.492-2.384 5.785h.002C11.978 15.292 10.158 16 8 16A8 8 0 1 1 8 0a7.7 7.7 0 0 1 5.352 2.082l-2.284 2.284A4.35 4.35 0 0 0 8 3.166c-2.087 0-3.86 1.408-4.492 3.304a4.8 4.8 0 0 0 0 3.063h.003c.635 1.893 2.405 3.301 4.492 3.301 1.078 0 2.004-.276 2.722-.764h-.003a3.7 3.7 0 0 0 1.599-2.431H8v-3.08h7.545z"
+                />
+              </svg>
+              Google
+            </button>
+            <button class="social-btn">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                fill="currentColor"
+                class="bi bi-facebook"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z"
+                />
+              </svg>
+              Facebook
+            </button>
+          </div>
+        </div>
+
+        <div class="login-link">
+          Already have an account? <a href="login.html">Log in</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+      <div class="footer-content">
+        <div class="footer-section">
+          <h3>About Us</h3>
+          <p>
+            Your premier destination for quality products and exceptional
+            service.
+          </p>
+        </div>
+        <div class="footer-section">
+          <h3>Quick Links</h3>
+          <a href="privacy.html" style="color: white">Privacy Policy</a>
+          <a href="terms.html" style="color: white">Terms of Service</a>
+          <a href="faq.html" style="color: white">FAQ</a>
+        </div>
+        <div class="footer-section">
+          <h3>Contact</h3>
+          <p>📧 support@ffrhman.com</p>
+          <p>📞 01303203627</p>
+          <div class="social-links">
+            <a href="https://www.facebook.com/FayajurRohmanFayaj/"
+              >📘 Facebook</a
+            >
+            <a href="https://ffrohman.com/">🐦 X</a>
+            <a href="https://bd.linkedin.com/in/ffrohman">📷 linkedin</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      // Password Match Validation
+      const password = document.getElementById("password");
+      const confirmPassword = document.getElementById("confirm-password");
+      const passwordMatch = document.querySelector(".password-match");
+
+      function checkPasswordMatch() {
+        if (password.value !== confirmPassword.value) {
+          passwordMatch.style.display = "block";
+          confirmPassword.setCustomValidity("Passwords don't match");
+        } else {
+          passwordMatch.style.display = "none";
+          confirmPassword.setCustomValidity("");
+        }
+      }
+
+      password.addEventListener("input", checkPasswordMatch);
+      confirmPassword.addEventListener("input", checkPasswordMatch);
+
+      // Form Submission
+      document
+        .getElementById("signupForm")
+        .addEventListener("submit", function (e) {
+          e.preventDefault();
+
+          if (password.value === confirmPassword.value) {
+            // Add your signup logic here
+            alert("Account created successfully!");
+            window.location.href = "index.html";
+          }
+        });
+    </script>
+  </body>
+</html>

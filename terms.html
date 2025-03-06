@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Terms of Service - E-Commerce</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Arial", sans-serif;
+      }
+
+      :root {
+        --primary: #2c3e50;
+        --accent: #e74c3c;
+        --hover: #3498db;
+      }
+
+      .navbar {
+        background: var(--primary);
+        padding: 1rem 2rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+      }
+
+      .logo {
+        color: white;
+        font-size: 1.8rem;
+        font-weight: bold;
+        text-decoration: none;
+      }
+
+      .nav-links {
+        display: flex;
+        gap: 2rem;
+        align-items: center;
+      }
+
+      .nav-links a {
+        color: white;
+        text-decoration: none;
+        padding: 0.5rem 1rem;
+        transition: 0.3s;
+      }
+
+      .nav-links a:hover {
+        color: var(--hover);
+      }
+
+      .cart-count {
+        background: var(--accent);
+        padding: 2px 8px;
+        border-radius: 20px;
+        margin-left: 5px;
+      }
+
+      .terms-container {
+        max-width: 1200px;
+        margin: 2rem auto;
+        padding: 0 2rem;
+        line-height: 1.6;
+      }
+
+      .terms-header {
+        text-align: center;
+        margin-bottom: 3rem;
+      }
+
+      .terms-section {
+        margin-bottom: 2rem;
+      }
+
+      .terms-section h2 {
+        color: var(--primary);
+        margin-bottom: 1rem;
+      }
+
+      .terms-section ul {
+        margin-left: 2rem;
+        margin-bottom: 1rem;
+      }
+
+      .highlight {
+        color: var(--accent);
+        font-weight: bold;
+      }
+
+      footer {
+        background: var(--primary);
+        color: white;
+        padding: 3rem 2rem;
+        margin-top: 4rem;
+      }
+
+      .footer-content {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 2rem;
+      }
+
+      @media (max-width: 768px) {
+        .terms-container {
+          padding: 0 1rem;
+        }
+        .nav-links {
+          display: none;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar">
+      <a href="index.html" class="logo">eShop</a>
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="products.html">Products</a>
+        <a href="contact.html">Contact</a>
+        <a href="cart.html">🛒 Cart <span class="cart-count">2</span></a>
+      </div>
+    </nav>
+
+    <div class="terms-container">
+      <div class="terms-header">
+        <h1>Terms of Service</h1>
+        <p>Last Updated: August 2023</p>
+      </div>
+
+      <div class="terms-section">
+        <h2>1. Acceptance of Terms</h2>
+        <p>
+          By accessing or using eShop services, you agree to be bound by these
+          Terms of Service.
+        </p>
+      </div>
+
+      <div class="terms-section">
+        <h2>2. Account Registration</h2>
+        <p>
+          You must provide accurate information when creating an account and
+          maintain the security of your credentials.
+        </p>
+      </div>
+
+      <div class="terms-section">
+        <h2>3. Prohibited Activities</h2>
+        <ul>
+          <li>Unauthorized commercial activities</li>
+          <li>Data mining or harvesting</li>
+          <li>Impersonation of others</li>
+          <li>Distribution of malware</li>
+        </ul>
+      </div>
+
+      <div class="terms-section">
+        <h2>4. Intellectual Property</h2>
+        <p>
+          All content remains the property of eShop. You may not use our
+          branding without permission.
+        </p>
+      </div>
+
+      <div class="terms-section">
+        <h2>5. Limitation of Liability</h2>
+        <p>
+          eShop shall not be liable for any indirect, incidental, or
+          consequential damages arising from service use.
+        </p>
+      </div>
+
+      <div class="terms-section">
+        <h2>6. Changes to Terms</h2>
+        <p>
+          We reserve the right to modify these terms at any time. Continued use
+          constitutes acceptance.
+        </p>
+      </div>
+
+      <div class="terms-section">
+        <h2>7. Contact Information</h2>
+        <p>
+          For questions about these terms, contact us at
+          <span class="highlight">support@ffrohman.com</span>
+        </p>
+      </div>
+    </div>
+
+    <footer>
+      <div class="footer-content">
+        <div class="footer-section">
+          <h3>About Us</h3>
+          <p>
+            Your premier destination for quality products and exceptional
+            service.
+          </p>
+        </div>
+        <div class="footer-section">
+          <h3>Quick Links</h3>
+          <a href="terms.html" style="color: white">Terms of Service</a>
+          <a href="privacy.html" style="color: white">Privacy Policy</a>
+          <a href="faq.html" style="color: white">FAQ</a>
+        </div>
+        <div class="footer-section">
+          <h3>Contact</h3>
+          <p>📧 support@ffrohman.com</p>
+          <p>📞 (+880) 1303203627</p>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
